@@ -2,4 +2,7 @@
 
 (defpackage #:cluffer-emacs
   (:use #:common-lisp)
-  (:export))
+  (:export #:forward-item
+	   #:backward-item
+	   #:item-before-cursor
+	   #:item-after-cursor))
