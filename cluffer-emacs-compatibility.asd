@@ -4,4 +4,4 @@
   :depends-on (:cluffer)
   :serial t
   :components
-  ())
+  ((:file "packages")))
