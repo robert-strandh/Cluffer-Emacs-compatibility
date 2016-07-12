@@ -1,0 +1,6 @@
+This system defines a set of functions that make a Cluffer editor
+buffer look like an Emacs buffer.
+
+Specifically, it implements the Emacs convention that the buffer is a
+single sequence of items in which a newline character separates two
+lines.
