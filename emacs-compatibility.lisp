@@ -26,3 +26,12 @@
 	   (cluffer:attach-cursor cursor prev-line end)))
 	(t
 	 (cluffer:backward-item cursor))))
+
+(defun item-before-cursor (cursor)
+  (cond ((cluffer:beginning-of-buffer-p cursor)
+	 (error 'beginning-of-buffer
+		:buffer (cluffer:buffer cursor)))
+	((cluffer:beginning-of-line-p cursor)
+	 #\Newline)
+	(t
+	 (cluffer:item-before-cursor cursor))))
