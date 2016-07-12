@@ -35,3 +35,12 @@
 	 #\Newline)
 	(t
 	 (cluffer:item-before-cursor cursor))))
+
+(defun item-after-cursor (cursor)
+  (cond ((cluffer:end-of-buffer-p cursor)
+	 (error 'end-of-buffer
+		:buffer (cluffer:buffer cursor)))
+	((cluffer:end-of-line-p cursor)
+	 #\Newline)
+	(t
+	 (cluffer:item-after-cursor cursor))))
