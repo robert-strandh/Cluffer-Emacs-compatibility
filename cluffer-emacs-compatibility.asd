@@ -1,7 +1,8 @@
 (cl:in-package #:asdf-user)
 
 (defsystem cluffer-emacs-compatibility
-  :depends-on (:cluffer)
+  :depends-on (:acclimation
+	       :cluffer)
   :serial t
   :components
   ((:file "packages")))
