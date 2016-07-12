@@ -5,4 +5,5 @@
   (:export #:forward-item
 	   #:backward-item
 	   #:item-before-cursor
-	   #:item-after-cursor))
+	   #:item-after-cursor
+	   #:insert-item))

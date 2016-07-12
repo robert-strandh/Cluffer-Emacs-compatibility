@@ -44,3 +44,9 @@
 	 #\Newline)
 	(t
 	 (cluffer:item-after-cursor cursor))))
+
+(defun insert-item (cursor item)
+  (cond ((eql item #\Newline)
+	 (cluffer:split-line cursor))
+	(t
+	 (cluffer:insert-item cursor item))))
