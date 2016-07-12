@@ -50,3 +50,12 @@
 	 (cluffer:split-line cursor))
 	(t
 	 (cluffer:insert-item cursor item))))
+
+(defun delete-item (cursor)
+  (cond ((cluffer:end-of-buffer-p cursor)
+	 (error 'end-of-buffer
+		:buffer (cluffer:buffer cursor)))
+	((cluffer:end-of-line-p cursor)
+	 (cluffer:join-line cursor))
+	(t
+	 (cluffer:delete-item cursor))))

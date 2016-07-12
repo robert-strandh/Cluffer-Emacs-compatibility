@@ -6,4 +6,5 @@
 	   #:backward-item
 	   #:item-before-cursor
 	   #:item-after-cursor
-	   #:insert-item))
+	   #:insert-item
+	   #:delete-item))
