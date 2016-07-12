@@ -12,3 +12,17 @@
 	   (cluffer:attach-cursor cursor next-line 0)))
 	(t
 	 (cluffer:forward-item cursor))))
+
+(defun backward-item (cursor)
+  (cond ((cluffer:beginning-of-buffer-p cursor)
+	 (error 'beginning-of-buffer
+		:buffer (cluffer:buffer cursor)))
+	((cluffer:beginning-of-line-p cursor)
+	 (let* ((this-line-number (cluffer:line-number cursor))
+		(buffer (cluffer:buffer cursor))
+		(prev-line (cluffer:find-line buffer (1- this-line-number)))
+		(end (cluffer:item-count prev-line)))
+	   (cluffer:detach-cursor cursor)
+	   (cluffer:attach-cursor cursor prev-line end)))
+	(t
+	 (cluffer:backward-item cursor))))
