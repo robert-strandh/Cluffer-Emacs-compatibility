@@ -59,3 +59,13 @@
 	 (cluffer:join-line cursor))
 	(t
 	 (cluffer:delete-item cursor))))
+
+(defun erase-item (cursor)
+  (cond ((cluffer:beginning-of-buffer-p cursor)
+	 (error 'beginning-of-buffer
+		:buffer (cluffer:buffer cursor)))
+	((cluffer:beginning-of-line-p cursor)
+	 (backward-item cursor)
+	 (cluffer:join-line cursor))
+	(t
+	 (cluffer:erase-item cursor))))

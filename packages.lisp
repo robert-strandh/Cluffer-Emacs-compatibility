@@ -7,4 +7,5 @@
 	   #:item-before-cursor
 	   #:item-after-cursor
 	   #:insert-item
-	   #:delete-item))
+	   #:delete-item
+	   #:erase-item))
