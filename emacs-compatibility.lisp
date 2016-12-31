@@ -2,7 +2,7 @@
 
 (defun forward-item (cursor)
   (cond ((cluffer:end-of-buffer-p cursor)
-	 (error 'end-of-buffer
+	 (error 'cluffer:end-of-buffer
 		:buffer (cluffer:buffer cursor)))
 	((cluffer:end-of-line-p cursor)
 	 (let* ((this-line-number (cluffer:line-number cursor))
@@ -15,7 +15,7 @@
 
 (defun backward-item (cursor)
   (cond ((cluffer:beginning-of-buffer-p cursor)
-	 (error 'beginning-of-buffer
+	 (error 'cluffer:beginning-of-buffer
 		:buffer (cluffer:buffer cursor)))
 	((cluffer:beginning-of-line-p cursor)
 	 (let* ((this-line-number (cluffer:line-number cursor))
@@ -29,7 +29,7 @@
 
 (defun item-before-cursor (cursor)
   (cond ((cluffer:beginning-of-buffer-p cursor)
-	 (error 'beginning-of-buffer
+	 (error 'cluffer:beginning-of-buffer
 		:buffer (cluffer:buffer cursor)))
 	((cluffer:beginning-of-line-p cursor)
 	 #\Newline)
@@ -38,7 +38,7 @@
 
 (defun item-after-cursor (cursor)
   (cond ((cluffer:end-of-buffer-p cursor)
-	 (error 'end-of-buffer
+	 (error 'cluffer:end-of-buffer
 		:buffer (cluffer:buffer cursor)))
 	((cluffer:end-of-line-p cursor)
 	 #\Newline)
@@ -53,7 +53,7 @@
 
 (defun delete-item (cursor)
   (cond ((cluffer:end-of-buffer-p cursor)
-	 (error 'end-of-buffer
+	 (error 'cluffer:end-of-buffer
 		:buffer (cluffer:buffer cursor)))
 	((cluffer:end-of-line-p cursor)
 	 (cluffer:join-line cursor))
@@ -62,7 +62,7 @@
 
 (defun erase-item (cursor)
   (cond ((cluffer:beginning-of-buffer-p cursor)
-	 (error 'beginning-of-buffer
+	 (error 'cluffer:beginning-of-buffer
 		:buffer (cluffer:buffer cursor)))
 	((cluffer:beginning-of-line-p cursor)
 	 (backward-item cursor)
