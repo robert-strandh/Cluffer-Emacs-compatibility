@@ -9,5 +9,4 @@
   :serial t
   :components
   ((:file "packages")
-   (:file "conditions")
    (:file "emacs-compatibility")))
